@@ -1,0 +1,8 @@
+.homeWrap {
+	display: grid;
+	align-items: center;
+	align-content: center;
+	gap: 12px;
+	justify-content: center;
+	height: 100vh;
+}
