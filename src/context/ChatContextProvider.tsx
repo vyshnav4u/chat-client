@@ -8,9 +8,9 @@ import {
 import { generateUsername } from '../utils/commonUtil';
 import { getColorPallet } from '../utils/themeConfig';
 import { initSocketConnection } from '../http/connectSocket';
-import { ChatContext, initialState } from './ChatContext';
+import { ChatContext } from './ChatContext';
 import { getMessageUri, httpGet } from '../api/httpHelpers';
-import { MESSAGE_RESPONSE } from './constants';
+import { initialState, MESSAGE_RESPONSE } from './ChatContext.constants';
 
 type TChatContextProvider = {
 	children: JSX.Element;
@@ -27,6 +27,7 @@ export const ChatContextProvider = ({ children }: TChatContextProvider) => {
 	useEffect(() => {
 		const getCurrentChat = async () => {
 			if (!state.showChat) return;
+
 			const { data } = await httpGet<TChatMessageResponse>(
 				getMessageUri(state.roomId),
 				MESSAGE_RESPONSE

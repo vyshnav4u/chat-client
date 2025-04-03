@@ -1,4 +1,4 @@
-import { MESSAGE_PER_PAGE } from '../context/constants';
+import { MESSAGE_PER_PAGE } from '../context/ChatContext.constants';
 import { MESSAGE_URI } from './constants';
 
 export const getMessageUri = (

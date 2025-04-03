@@ -3,7 +3,7 @@ import { useChatContext } from '../../context/ChatContext';
 import SingleMessage from './SingleMessage';
 import { getMessageUri, httpGet } from '../../api/httpHelpers';
 import { TChatMessageResponse } from '../../context/ChatContext.type';
-import { MESSAGE_RESPONSE } from '../../context/constants';
+import { MESSAGE_RESPONSE } from '../../context/ChatContext.constants';
 
 const ChatMessages = () => {
 	const {

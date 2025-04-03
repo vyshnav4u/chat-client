@@ -1,4 +1,3 @@
-import { DefaultEventsMap } from 'socket.io'; // check correct import
 import { Socket } from 'socket.io-client';
 
 export type TUser = {
@@ -15,30 +14,34 @@ export type TMessage = {
 	content: string;
 };
 
-export type TSocket = Socket<DefaultEventsMap, DefaultEventsMap>;
+export type TSocket = Socket;
 
 export type TChatConfig = {
 	user: TUser;
+
 	messages: TMessage[];
 	skip: number;
 	total: number;
 	limit: number;
+
 	setDisplayName: (name: string, room?: string) => void;
 	setMessage: (message: TMessage) => void;
 	setMessageLocally: (message: TMessage) => void;
 	loadOldMessages: (messagesData: TChatMessageResponse) => void;
+
 	theme?: {
 		primaryColor1: string;
 		primaryColor2: string;
 		bgColor: string;
 	};
+
 	showChat: boolean;
-	socket: null | Socket<DefaultEventsMap, DefaultEventsMap>;
+	socket: undefined | Socket;
 	roomId: string;
-	lastMessageRef: React.RefObject<HTMLDivElement | null>;
-	firstMessageRef: React.RefObject<HTMLDivElement | null>;
-	scrollToMessageRef: React.RefObject<HTMLDivElement | null>;
-	scrollToMessageId: React.MutableRefObject<string>;
+	lastMessageRef: React.RefObject<HTMLDivElement>;
+	firstMessageRef: React.RefObject<HTMLDivElement>;
+	scrollToMessageRef: React.RefObject<HTMLDivElement>;
+	scrollToMessageId: React.RefObject<string>;
 };
 
 export type TChatMessageResponse = {
