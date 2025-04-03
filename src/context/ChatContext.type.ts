@@ -41,7 +41,7 @@ export type TChatConfig = {
 	lastMessageRef: React.RefObject<HTMLDivElement>;
 	firstMessageRef: React.RefObject<HTMLDivElement>;
 	scrollToMessageRef: React.RefObject<HTMLDivElement>;
-	scrollToMessageId: React.RefObject<string>;
+	scrollToMessageId: React.MutableRefObject<string>;
 };
 
 export type TChatMessageResponse = {
